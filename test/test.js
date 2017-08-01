@@ -25,7 +25,7 @@ try {
 	obj.privateKey = fs.readFileSync('./key/app_private_key.pem').toString(); // 私钥: 必填
 	obj.publicKey = fs.readFileSync('./key/alipay_pub.pem').toString(); // 阿里的公钥: 必填
 	alipay(obj, (result) => {
-		// console.log('>>>>>',result);
+		console.log('>>>>>',result);
 	});
 } catch (e) {
 	console.log(e);
