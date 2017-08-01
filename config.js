@@ -5,7 +5,7 @@ const config = {
 	product: {
 		url: 'https://openapi.alipay.com/gateway.do?'
 	},
-	param: { // 必填参数(只测试必填,不测试多填参数,使用者注意)
+	param: { // 必填参数(只测试必填,不测试多填参数,可能造成验签不通过,使用者注意)
 		'publicParam': ['app_id', 'method', 'biz_content', 'privateKey', 'publicKey'],
 		'alipay.trade.pay': ['out_trade_no', 'scene', 'auth_code', 'subject'],
 		'alipay.trade.fastpay.refund.query': ['out_request_no', ['trade_no', 'out_trade_no']],
