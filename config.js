@@ -5,7 +5,7 @@ const config = {
 	product: {
 		url: 'https://openapi.alipay.com/gateway.do?'
 	},
-	param: { // 必填参数(只测试必填,不测试多填参数,可能造成验签不通过,使用者注意)
+	api_list: { // 必填参数(只测试必填,不测试多填参数,可能造成验签不通过,使用者注意)
 		//公共参数
 		'publicParam': ['app_id', 'method', 'biz_content', 'privateKey', 'publicKey'],
 
