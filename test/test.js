@@ -22,8 +22,8 @@ try {
 			total_amount: '0.01'
 		}
 	};
-	obj.rsaKey = fs.readFileSync('./key/app_private_key.pem').toString(); // 公钥或者私钥: 必填
-
+	obj.privateKey = fs.readFileSync('./key/app_private_key.pem').toString(); // 私钥: 必填
+	obj.publicKey = fs.readFileSync('./key/app_public_key.pem').toString(); // 公钥: 必填
 	alipay(obj, (result) => {
 		console.log(result.body);
 	});
