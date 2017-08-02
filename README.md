@@ -28,23 +28,23 @@
 		2、同步验证
 			函数: verifyResponse
 			参数: 
-				{
-					publicKey: fs.readFileSync(__dirname + '/alipay_pub.pem').toString(), // 阿里的公钥: 必填
-					response: {
-						alipay_trade_query_response: {
-							code: "40004",
-							msg: "Business Failed",
-							sub_code: "ACQ.TRADE_NOT_EXIST",
-							sub_msg: "交易不存在",
-							buyer_pay_amount: "0.00",
-							invoice_amount: "0.00",
-							out_trade_no: "20150320010101001",
-							point_amount: "0.00",
-							receipt_amount: "0.00"
-						},
-						sign: "X+LacDVFaEjywgNCY4lFQyD26/5c2kzCosUa+1OEO54RYXgPxKTl+loUHt18EUnZQlun0csVK3NTMx7QTWddN1PiMlLHIcUaYSOj6KkhGfUkFLfIgQYlwhUGmkswNvw+VhaLraE/cDFLif1hLCpdEA1qB9rEwzvDbH1DEB7TWb1WfFGc7T+YLQW+pTDj8qSY37zw38fgemzGFiAzMuPKEp9esnyCWDGtz4LlzCTaRGHU8AIj52v8mK1vH+t+zKb128bNkdAZJEIDSKdpkl+KWXLaMrLpR0IqGSsLU/FyXSz2Wrd7PE4ys84hfErxDVlS7X6W7sELXcS1a5eao2dfUg=="
-					}
-				};
+			{
+				publicKey: 'xxxxxxxxxxxxxxxxxxxxxxx', // 阿里的公钥: 必填
+				response: { 
+					alipay_trade_query_response: {
+						code: "40004",
+						msg: "Business Failed",
+						sub_code: "ACQ.TRADE_NOT_EXIST",
+						sub_msg: "交易不存在",
+						buyer_pay_amount: "0.00",
+						invoice_amount: "0.00",
+						out_trade_no: "20150320010101001",
+						point_amount: "0.00",
+						receipt_amount: "0.00"
+					},
+					sign: "X+LacDVFaEjywgNCY4lFQyD26/5c2kzCosUa+1OEO54RYXgPxKTl+loUHt18EUnZQlun0csVK3NTMx7QTWddN1PiMlLHIcUaYSOj6KkhGfUkFLfIgQYlwhUGmkswNvw+VhaLraE/cDFLif1hLCpdEA1qB9rEwzvDbH1DEB7TWb1WfFGc7T+YLQW+pTDj8qSY37zw38fgemzGFiAzMuPKEp9esnyCWDGtz4LlzCTaRGHU8AIj52v8mK1vH+t+zKb128bNkdAZJEIDSKdpkl+KWXLaMrLpR0IqGSsLU/FyXSz2Wrd7PE4ys84hfErxDVlS7X6W7sELXcS1a5eao2dfUg=="
+				}
+			};
 
 ```
 ****************************************************************************************
