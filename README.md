@@ -37,8 +37,8 @@
 			 const verifyResponse = require('node-alipay').verifyResponse;
 		参数: 
 			let obj = {
-				publicKey: 'xxxxxxxxxxxxxxxxxxxxxxx', // 阿里的公钥: 必填
-				response: { 
+				publicKey: 'xxxxxxxxxxxxxxxxxxxxxxx', // 阿里的公钥: (必填)
+				response: { //(必填)
 					alipay_trade_query_response: {
 						code: "40004",
 						msg: "Business Failed",
