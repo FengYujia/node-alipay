@@ -27,7 +27,12 @@ const config = {
 		'alipay.trade.fastpay.refund.query': ['out_request_no', ['trade_no', 'out_trade_no']],
 
 		//手机网站支付
-		'alipay.trade.wap.pay': ['out_trade_no', 'total_amount', 'subject', 'product_code']
+		'alipay.trade.wap.pay': ['out_trade_no', 'total_amount', 'subject', 'product_code'],
+		'alipay.trade.page.pay': ['out_trade_no', 'total_amount', 'subject', 'product_code']
+	},
+	product_code: {
+		'alipay.trade.wap.pay': 'QUICK_WAP_WAY',
+		'alipay.trade.page.pay': 'FAST_INSTANT_TRADE_PAY',
 	}
 };
 

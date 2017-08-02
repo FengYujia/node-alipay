@@ -9,7 +9,7 @@ try {
 	let obj = { // <=====测试只选部分必填参数
 		env: 'dev', // 沙盒还是正式环境
 		app_id: '2016073100132509', // app_id : 必填
-		method: 'alipay.trade.wap.pay', // 方法: 必填
+		method: 'alipay.trade.page.pay', // 方法: 必填
 		charset: 'utf-8', // 默认:utf-8
 		sign_type: 'RSA2', // 默认:RSA2
 		timestamp: moment().format('YYYY-MM-DD HH:mm:ss'), // 默认当前时间
