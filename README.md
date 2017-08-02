@@ -11,8 +11,9 @@
 	使用:
 		1、发起支付:
 			函数: pay
+				 const pay = require('node-alipay').pay;
 			参数:
-			{
+			let obj = {
 				env: 'dev', // 沙盒还是正式环境: dev or product (默认:dev)
 				app_id: 'xxxxxxxxxxxxxxxx', // app_id : (必填)
 				method: 'alipay.trade.page.pay', // 接口名称: 支持网页支付和手机网页支付及交易辅助接口(必填)
@@ -24,11 +25,13 @@
 				},
 				privateKey:'dsadsad', // 私钥:(必填)
 			};
+			pay(obj,callback)
 			返回值: 一个表单
 		2、同步验证
 			函数: verifyResponse
+				 const verifyResponse = require('node-alipay').verifyResponse;
 			参数: 
-			{
+			let obj = {
 				publicKey: 'xxxxxxxxxxxxxxxxxxxxxxx', // 阿里的公钥: 必填
 				response: { 
 					alipay_trade_query_response: {
@@ -45,7 +48,7 @@
 					sign: "X+LacDVFaEjywgNCY4lFQyD26/5c2kzCosUa+1OEO54RYXgPxKTl+loUHt18EUnZQlun0csVK3NTMx7QTWddN1PiMlLHIcUaYSOj6KkhGfUkFLfIgQYlwhUGmkswNvw+VhaLraE/cDFLif1hLCpdEA1qB9rEwzvDbH1DEB7TWb1WfFGc7T+YLQW+pTDj8qSY37zw38fgemzGFiAzMuPKEp9esnyCWDGtz4LlzCTaRGHU8AIj52v8mK1vH+t+zKb128bNkdAZJEIDSKdpkl+KWXLaMrLpR0IqGSsLU/FyXSz2Wrd7PE4ys84hfErxDVlS7X6W7sELXcS1a5eao2dfUg=="
 				}
 			};
-
+			verifyResponse(obj,callback)
 ```
 ****************************************************************************************
 有问题欢迎交流哈~
