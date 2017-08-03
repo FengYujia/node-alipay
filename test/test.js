@@ -75,7 +75,7 @@ obj.response = {
 	buyer_logon_id: 'uxu***@sandbox.com',
 	point_amount: '0.00'
 };
-obj.publicKey = fs.readFileSync('./key/alipay_pub.pem').toString(); // 私钥: 必填
+obj.publicKey = fs.readFileSync('./key/alipay_pub.pem').toString();
 verifyNotify(obj, (result) => {
 	console.log(result);
 });

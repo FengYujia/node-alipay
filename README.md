@@ -55,5 +55,43 @@
 			};
 		verifyResponse(obj,callback)
 ```
+
+#### 2、同步验证
+
+```
+		函数: verifyNotify
+			 const verifyNotify = require('node-alipay').verifyNotify;
+		参数: 
+			let obj = {};
+			obj.response = {
+				gmt_create: '2017-08-03 10:59:13',
+				charset: 'utf-8',
+				seller_email: 'hehdtl1351@sandbox.com',
+				subject: 'test',
+				sign: 'LOeN580qy97EI6Bf1UvcneTwsLLfGd4HJp4+gGPEpWfIQj93JRVSrdDLO5KQKeVfQbt7I99IlNYpE3k/sjSFvy+39YD1Z30WUxJgFJrC8yG8XOYe+v17JwQSwIvYWiPxhd0xITRH/Xr4G1wkO3NmdBB+5fUgv9zvH9X+Tk4jwdDXPReZ/dHg28wAWlX0JYcbhPNTRw3wTZspgOIBEZ59kkj2rYnk8uAm7dz2bFXS/T0keVek4P3Brk8BB8aEal1lYtDUWWWaLlMPMzrflSaZWA/t8XqOT+7PkU0dHUIq0HqV2lOhsNj5JWwRktFS75dZoblgtuQnLel0lu5BHuGuHA==',
+				buyer_id: '2088102169911215',
+				invoice_amount: '0.01',
+				notify_id: '6adbe82e9086075f70e17db1566cd45hme',
+				fund_bill_list: '[{"amount":"0.01","fundChannel":"ALIPAYACCOUNT"}]',
+				notify_type: 'trade_status_sync',
+				trade_status: 'TRADE_SUCCESS',
+				receipt_amount: '0.01',
+				app_id: '2016073100132509',
+				buyer_pay_amount: '0.01',
+				sign_type: 'RSA2',
+				seller_id: '2088102169284526',
+				gmt_payment: '2017-08-03 10:59:14',
+				notify_time: '2017-08-03 10:59:15',
+				version: '1.0',
+				out_trade_no: '20150320010101006',
+				total_amount: '0.01',
+				trade_no: '2017080321001004210200152988',
+				auth_app_id: '2016073100132509',
+				buyer_logon_id: 'uxu***@sandbox.com',
+				point_amount: '0.00'
+			};
+			obj.publicKey = 'xxxxxx'; // 阿里的公钥: (必填)
+			verifyNotify(obj,callback)
+```
 ****************************************************************************************
 有问题欢迎交流哈~
