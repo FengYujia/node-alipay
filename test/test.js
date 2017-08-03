@@ -6,47 +6,47 @@ const verifyResponse = require('../index.js').verifyResponse;
 const verifyReturn = require('../index.js').verifyReturn;
 
 //1、 =================API调起测试
-// let obj = { // <=====测试只选部分必填参数
-// 	env: 'dev', // 沙盒还是正式环境
-// 	app_id: '2016073100132509', // app_id : 必填
-// 	method: 'alipay.trade.page.pay', // 方法: 必填
-// 	charset: 'utf-8', // 默认:utf-8
-// 	sign_type: 'RSA2', // 默认:RSA2
-// 	version: '1.0',
-// 	biz_content: { // 请求参数: 必填
-// 		out_trade_no: 'ALIPAYTEST2016081622560194853',
-// 		subject: 'test',
-// 		total_amount: '0.01',
-// 		product_code: 'aaaaaa'
-// 	}
-// };
-// obj.privateKey = fs.readFileSync('./key/app_private_key.pem').toString(); // 私钥: 必填
-// alipay(obj, (result) => {
-// 	console.log('>>>>>', result);
-// });
-
-//2、 =================前台回跳验证
-let obj = {
-	publicKey: fs.readFileSync('./key/alipay_pub.pem').toString(), // 阿里的公钥: 必填
-	sign_type: 'RSA2',
-	response: {
-		alipay_trade_query_response: {
-			code: "40004",
-			msg: "Business Failed",
-			sub_code: "ACQ.TRADE_NOT_EXIST",
-			sub_msg: "交易不存在",
-			buyer_pay_amount: "0.00",
-			invoice_amount: "0.00",
-			out_trade_no: "20150320010101001",
-			point_amount: "0.00",
-			receipt_amount: "0.00"
-		},
-		sign: "X+LacDVFaEjywgNCY4lFQyD26/5c2kzCosUa+1OEO54RYXgPxKTl+loUHt18EUnZQlun0csVK3NTMx7QTWddN1PiMlLHIcUaYSOj6KkhGfUkFLfIgQYlwhUGmkswNvw+VhaLraE/cDFLif1hLCpdEA1qB9rEwzvDbH1DEB7TWb1WfFGc7T+YLQW+pTDj8qSY37zw38fgemzGFiAzMuPKEp9esnyCWDGtz4LlzCTaRGHU8AIj52v8mK1vH+t+zKb128bNkdAZJEIDSKdpkl+KWXLaMrLpR0IqGSsLU/FyXSz2Wrd7PE4ys84hfErxDVlS7X6W7sELXcS1a5eao2dfUg=="
+let obj = { // <=====测试只选部分必填参数
+	env: 'dev', // 沙盒还是正式环境
+	app_id: '2016073100132509', // app_id : 必填
+	method: 'alipay.trade.page.pay', // 方法: 必填
+	charset: 'utf-8', // 默认:utf-8
+	sign_type: 'RSA2', // 默认:RSA2
+	version: '1.0',
+	biz_content: { // 请求参数: 必填
+		out_trade_no: 'ALIPAYTEST2016081622560194853',
+		subject: 'test',
+		total_amount: '0.01',
+		product_code: 'aaaaaa'
 	}
 };
-verifyResponse(obj, (result) => {
-	console.log(result);
+obj.privateKey = fs.readFileSync('./key/app_private_key.pem').toString(); // 私钥: 必填
+alipay(obj, (result) => {
+	console.log('>>>>>', result);
 });
+
+//2、 =================前台回跳验证
+// let obj = {
+// 	publicKey: fs.readFileSync('./key/alipay_pub.pem').toString(), // 阿里的公钥: 必填
+// 	sign_type: 'RSA',
+// 	response: {
+// 		alipay_trade_query_response: {
+// 			code: "40004",
+// 			msg: "Business Failed",
+// 			sub_code: "ACQ.TRADE_NOT_EXIST",
+// 			sub_msg: "交易不存在",
+// 			buyer_pay_amount: "0.00",
+// 			invoice_amount: "0.00",
+// 			out_trade_no: "20150320010101001",
+// 			point_amount: "0.00",
+// 			receipt_amount: "0.00"
+// 		},
+// 		sign: "X+LacDVFaEjywgNCY4lFQyD26/5c2kzCosUa+1OEO54RYXgPxKTl+loUHt18EUnZQlun0csVK3NTMx7QTWddN1PiMlLHIcUaYSOj6KkhGfUkFLfIgQYlwhUGmkswNvw+VhaLraE/cDFLif1hLCpdEA1qB9rEwzvDbH1DEB7TWb1WfFGc7T+YLQW+pTDj8qSY37zw38fgemzGFiAzMuPKEp9esnyCWDGtz4LlzCTaRGHU8AIj52v8mK1vH+t+zKb128bNkdAZJEIDSKdpkl+KWXLaMrLpR0IqGSsLU/FyXSz2Wrd7PE4ys84hfErxDVlS7X6W7sELXcS1a5eao2dfUg=="
+// 	}
+// };
+// verifyResponse(obj, (result) => {
+// 	console.log(result);
+// });
 //3、 =================notify验证测试
 // let obj = {};
 // obj.response = {
@@ -77,7 +77,7 @@ verifyResponse(obj, (result) => {
 // 	point_amount: '0.00'
 // };
 // obj.publicKey = fs.readFileSync('./key/alipay_pub.pem').toString();
-// verifyNotify(obj, (result) => {
+// verifyReturn(obj, (result) => {
 // 	console.log(result);
 // });
 
