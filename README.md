@@ -31,11 +31,11 @@
 				},
 				privateKey:'dsadsad', // 私钥:(必填)
 			};
-		pay(obj,callback)
-		返回值: 一个表单
+			pay(obj,callback)
+			返回值: 一个表单
 ```
 
-#### 2、同步验证
+#### 2、前台回跳验证
 
 ```
 		函数: verifyResponse
@@ -58,14 +58,15 @@
 					sign: "X+LacDVFaEjywgNCY4lFQyD26/5c2kzCosUa+1OEO54RYXgPxKTl+loUHt18EUnZQlun0csVK3NTMx7QTWddN1PiMlLHIcUaYSOj6KkhGfUkFLfIgQYlwhUGmkswNvw+VhaLraE/cDFLif1hLCpdEA1qB9rEwzvDbH1DEB7TWb1WfFGc7T+YLQW+pTDj8qSY37zw38fgemzGFiAzMuPKEp9esnyCWDGtz4LlzCTaRGHU8AIj52v8mK1vH+t+zKb128bNkdAZJEIDSKdpkl+KWXLaMrLpR0IqGSsLU/FyXSz2Wrd7PE4ys84hfErxDVlS7X6W7sELXcS1a5eao2dfUg=="
 				}
 			};
-		verifyResponse(obj,callback)
+			verifyResponse(obj,callback)
+			返回值: true/false
 ```
 
-#### 2、异步验证
+#### 3、异步同步验签
 
 ```
-		函数: verifyNotify
-			 const verifyNotify = require('alipay_api').verifyNotify;
+		函数: verifyReturn
+			 const verifyReturn = require('alipay_api').verifyReturn;
 		参数: 
 			let obj = {};
 			obj.response = {
@@ -96,7 +97,8 @@
 				point_amount: '0.00'
 			};
 			obj.publicKey = 'xxxxxx'; // 阿里的公钥: (必填)
-			verifyNotify(obj,callback)
+			verifyReturn(obj,callback)
+			返回值: true/false
 ```
 ****************************************************************************************
 有问题欢迎交流哈~
