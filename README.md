@@ -43,6 +43,7 @@
 		参数: 
 			let obj = {
 				publicKey: 'xxxxxxxxxxxxxxxxxxxxxxx', // 阿里的公钥: (必填)
+				sign_type: 'RSA2', //可选:RSA/RSA2 (默认:RSA2) 
 				response: { //(必填)
 					alipay_trade_query_response: {
 						code: "40004",
