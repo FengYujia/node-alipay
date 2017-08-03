@@ -56,7 +56,7 @@
 		verifyResponse(obj,callback)
 ```
 
-#### 2、同步验证
+#### 2、异步验证
 
 ```
 		函数: verifyNotify
