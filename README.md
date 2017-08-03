@@ -32,7 +32,7 @@
 				privateKey:'dsadsad', // 私钥:(必填)
 			};
 			pay(obj,callback)
-			返回值: 一个表单
+		返回值: 一个表单
 ```
 
 #### 2、前台回跳验证
@@ -60,7 +60,7 @@
 				}
 			};
 			verifyResponse(obj,callback)
-			返回值: true/false
+		返回值: true/false
 ```
 
 #### 3、异步同步验签
@@ -99,7 +99,7 @@
 			};
 			obj.publicKey = 'xxxxxx'; // 阿里的公钥: (必填)
 			verifyReturn(obj,callback)
-			返回值: true/false
+		返回值: true/false
 ```
 ****************************************************************************************
 有问题欢迎交流哈~
