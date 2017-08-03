@@ -1,4 +1,4 @@
-# node-alipay
+# alipay_api
 
 ## 新版支付宝API
 
@@ -8,11 +8,16 @@
 
 ****************************************************************************************
 #### 使用:
+
+```
+		npm install alipay_api
+```
+
 ##### 1、发起支付:
 
 ```
 		函数: pay
-			 const pay = require('node-alipay').pay;
+			 const pay = require('alipay_api').pay;
 		参数:
 			let obj = {
 				env: 'dev', // 沙盒还是正式环境: dev or product (默认:dev)
@@ -34,7 +39,7 @@
 
 ```
 		函数: verifyResponse
-			 const verifyResponse = require('node-alipay').verifyResponse;
+			 const verifyResponse = require('alipay_api').verifyResponse;
 		参数: 
 			let obj = {
 				publicKey: 'xxxxxxxxxxxxxxxxxxxxxxx', // 阿里的公钥: (必填)
@@ -60,7 +65,7 @@
 
 ```
 		函数: verifyNotify
-			 const verifyNotify = require('node-alipay').verifyNotify;
+			 const verifyNotify = require('alipay_api').verifyNotify;
 		参数: 
 			let obj = {};
 			obj.response = {

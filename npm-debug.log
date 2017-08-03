@@ -1,0 +1,142 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/joan-feng/Documents/myCode/node-alipay',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/joan-feng/.npm/alipay_api/1.1.0/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/joan-feng/.npm correctMkdir not in flight; initializing
+10 info lifecycle alipay_api@1.1.0~prepublish: alipay_api@1.1.0
+11 silly lifecycle alipay_api@1.1.0~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/joan-feng/.npm/alipay_api/1.1.0/package.tgz',
+12 verbose tar pack   '/Users/joan-feng/Documents/myCode/node-alipay' ]
+13 verbose tarball /Users/joan-feng/.npm/alipay_api/1.1.0/package.tgz
+14 verbose folder /Users/joan-feng/Documents/myCode/node-alipay
+15 verbose addLocalTarball adding from inside cache /Users/joan-feng/.npm/alipay_api/1.1.0/package.tgz
+16 verbose correctMkdir /Users/joan-feng/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd alipay_api@1.1.0
+18 verbose afterAdd /Users/joan-feng/.npm/alipay_api/1.1.0/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/joan-feng/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/joan-feng/.npm/alipay_api/1.1.0/package/package.json written
+21 silly publish { name: 'alipay_api',
+21 silly publish   version: '1.1.0',
+21 silly publish   private: false,
+21 silly publish   scripts:
+21 silly publish    { start: 'node index.js',
+21 silly publish      test: 'istanbul cover --dir=\'./static/\' ./node_modules/mocha/bin/_mocha -- --reporter mochawesome --reporter-options reportDir=\'./static/\' --timeout 100000 --recursive tests/' },
+21 silly publish   dependencies:
+21 silly publish    { bluebird: '^3.5.0',
+21 silly publish      'body-parser': '~1.16.0',
+21 silly publish      'cookie-parser': '~1.4.3',
+21 silly publish      debug: '~2.6.0',
+21 silly publish      express: '~4.14.1',
+21 silly publish      jade: '~1.11.0',
+21 silly publish      morgan: '~1.7.0',
+21 silly publish      'serve-favicon': '~2.3.2',
+21 silly publish      validator: '^7.0.0' },
+21 silly publish   devDependencies: { mocha: '^3.4.1', mochawesome: '^2.2.0' },
+21 silly publish   jshintConfig:
+21 silly publish    { esversion: 6,
+21 silly publish      curly: true,
+21 silly publish      devel: true,
+21 silly publish      eqeqeq: true,
+21 silly publish      forin: true,
+21 silly publish      indent: 2,
+21 silly publish      jquery: true,
+21 silly publish      latedef: 'nofunc',
+21 silly publish      maxerr: 50,
+21 silly publish      maxlen: 120,
+21 silly publish      maxparams: 4,
+21 silly publish      newcap: true,
+21 silly publish      noarg: true,
+21 silly publish      node: true,
+21 silly publish      nomen: true,
+21 silly publish      quotmark: 'single',
+21 silly publish      plusplus: false,
+21 silly publish      strict: true,
+21 silly publish      undef: true,
+21 silly publish      unused: 'strict' },
+21 silly publish   description: '## 新版支付宝API',
+21 silly publish   main: 'index.js',
+21 silly publish   directories: { test: 'test' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/FengYujia/node-alipay.git' },
+21 silly publish   author: { name: 'FengYujia' },
+21 silly publish   license: 'MIT',
+21 silly publish   bugs: { url: 'https://github.com/FengYujia/node-alipay/issues' },
+21 silly publish   homepage: 'https://github.com/FengYujia/node-alipay#readme',
+21 silly publish   readme: '# node-alipay\n\n## 新版支付宝API\n\n****************************************************************************************\n\n### 手机网页支付和网页支付demo\n\n****************************************************************************************\n#### 使用:\n##### 1、发起支付:\n\n```\n\t\t函数: pay\n\t\t\t const pay = require(\'node-alipay\').pay;\n\t\t参数:\n\t\t\tlet obj = {\n\t\t\t\tenv: \'dev\', // 沙盒还是正式环境: dev or product (默认:dev)\n\t\t\t\tapp_id: \'xxxxxxxxxxxxxxxx\', // app_id : (必填)\n\t\t\t\tmethod: \'alipay.trade.page.pay\', // 接口名称: 支持网页支付和手机网页支付及交易辅助接口(必填)\n\t\t\t\tcharset: \'utf-8\', // (默认:utf-8)\n\t\t\t\tsign_type: \'RSA2\', // (默认:RSA2)\n\t\t\t\ttimestamp: moment().format(\'YYYY-MM-DD HH:mm:ss\'), // (默认:当前时间)\n\t\t\t\tversion: \'1.0\', // (默认:version: \'1.0\')\n\t\t\t\tbiz_content: { // 请求参数: (必填:具体参数看文档)\n\t\t\t\t},\n\t\t\t\tprivateKey:\'dsadsad\', // 私钥:(必填)\n\t\t\t};\n\t\tpay(obj,callback)\n\t\t返回值: 一个表单\n```\n\n#### 2、同步验证\n\n```\n\t\t函数: verifyResponse\n\t\t\t const verifyResponse = require(\'node-alipay\').verifyResponse;\n\t\t参数: \n\t\t\tlet obj = {\n\t\t\t\tpublicKey: \'xxxxxxxxxxxxxxxxxxxxxxx\', // 阿里的公钥: (必填)\n\t\t\t\tresponse: { //(必填)\n\t\t\t\t\talipay_trade_query_response: {\n\t\t\t\t\t\tcode: "40004",\n\t\t\t\t\t\tmsg: "Business Failed",\n\t\t\t\t\t\tsub_code: "ACQ.TRADE_NOT_EXIST",\n\t\t\t\t\t\tsub_msg: "交易不存在",\n\t\t\t\t\t\tbuyer_pay_amount: "0.00",\n\t\t\t\t\t\tinvoice_amount: "0.00",\n\t\t\t\t\t\tout_trade_no: "20150320010101001",\n\t\t\t\t\t\tpoint_amount: "0.00",\n\t\t\t\t\t\treceipt_amount: "0.00"\n\t\t\t\t\t},\n\t\t\t\t\tsign: "X+LacDVFaEjywgNCY4lFQyD26/5c2kzCosUa+1OEO54RYXgPxKTl+loUHt18EUnZQlun0csVK3NTMx7QTWddN1PiMlLHIcUaYSOj6KkhGfUkFLfIgQYlwhUGmkswNvw+VhaLraE/cDFLif1hLCpdEA1qB9rEwzvDbH1DEB7TWb1WfFGc7T+YLQW+pTDj8qSY37zw38fgemzGFiAzMuPKEp9esnyCWDGtz4LlzCTaRGHU8AIj52v8mK1vH+t+zKb128bNkdAZJEIDSKdpkl+KWXLaMrLpR0IqGSsLU/FyXSz2Wrd7PE4ys84hfErxDVlS7X6W7sELXcS1a5eao2dfUg=="\n\t\t\t\t}\n\t\t\t};\n\t\tverifyResponse(obj,callback)\n```\n\n#### 2、异步验证\n\n```\n\t\t函数: verifyNotify\n\t\t\t const verifyNotify = require(\'node-alipay\').verifyNotify;\n\t\t参数: \n\t\t\tlet obj = {};\n\t\t\tobj.response = {\n\t\t\t\tgmt_create: \'2017-08-03 10:59:13\',\n\t\t\t\tcharset: \'utf-8\',\n\t\t\t\tseller_email: \'hehdtl1351@sandbox.com\',\n\t\t\t\tsubject: \'test\',\n\t\t\t\tsign: \'LOeN580qy97EI6Bf1UvcneTwsLLfGd4HJp4+gGPEpWfIQj93JRVSrdDLO5KQKeVfQbt7I99IlNYpE3k/sjSFvy+39YD1Z30WUxJgFJrC8yG8XOYe+v17JwQSwIvYWiPxhd0xITRH/Xr4G1wkO3NmdBB+5fUgv9zvH9X+Tk4jwdDXPReZ/dHg28wAWlX0JYcbhPNTRw3wTZspgOIBEZ59kkj2rYnk8uAm7dz2bFXS/T0keVek4P3Brk8BB8aEal1lYtDUWWWaLlMPMzrflSaZWA/t8XqOT+7PkU0dHUIq0HqV2lOhsNj5JWwRktFS75dZoblgtuQnLel0lu5BHuGuHA==\',\n\t\t\t\tbuyer_id: \'2088102169911215\',\n\t\t\t\tinvoice_amount: \'0.01\',\n\t\t\t\tnotify_id: \'6adbe82e9086075f70e17db1566cd45hme\',\n\t\t\t\tfund_bill_list: \'[{"amount":"0.01","fundChannel":"ALIPAYACCOUNT"}]\',\n\t\t\t\tnotify_type: \'trade_status_sync\',\n\t\t\t\ttrade_status: \'TRADE_SUCCESS\',\n\t\t\t\treceipt_amount: \'0.01\',\n\t\t\t\tapp_id: \'2016073100132509\',\n\t\t\t\tbuyer_pay_amount: \'0.01\',\n\t\t\t\tsign_type: \'RSA2\',\n\t\t\t\tseller_id: \'2088102169284526\',\n\t\t\t\tgmt_payment: \'2017-08-03 10:59:14\',\n\t\t\t\tnotify_time: \'2017-08-03 10:59:15\',\n\t\t\t\tversion: \'1.0\',\n\t\t\t\tout_trade_no: \'20150320010101006\',\n\t\t\t\ttotal_amount: \'0.01\',\n\t\t\t\ttrade_no: \'2017080321001004210200152988\',\n\t\t\t\tauth_app_id: \'2016073100132509\',\n\t\t\t\tbuyer_logon_id: \'uxu***@sandbox.com\',\n\t\t\t\tpoint_amount: \'0.00\'\n\t\t\t};\n\t\t\tobj.publicKey = \'xxxxxx\'; // 阿里的公钥: (必填)\n\t\t\tverifyNotify(obj,callback)\n```\n****************************************************************************************\n有问题欢迎交流哈~\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '750b30f708b20a81317b3b6345f5ab2323d77830',
+21 silly publish   _id: 'alipay_api@1.1.0',
+21 silly publish   _shasum: '0efa44f948b1fa66eb0bbe76f29d5b47be6a9178',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name alipay_api
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'alipay_api',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'alipay_api',
+26 silly mapToRegistry   name: 'alipay_api',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/alipay_api
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /Users/joan-feng/.npm/alipay_api/1.1.0/package.tgz
+30 verbose request uri https://registry.npmjs.org/alipay_api
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 12:45:53
+33 verbose request using bearer token for auth
+34 verbose request id 74a3e932186a47da
+35 http request PUT https://registry.npmjs.org/alipay_api
+36 http 403 https://registry.npmjs.org/alipay_api
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Thu, 03 Aug 2017 04:45:54 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-sin18028-SIN',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1501735554.826558,VS0,VE489',
+37 verbose headers   vary: 'Accept-Encoding, Accept' }
+38 verbose request invalidating /Users/joan-feng/.npm/registry.npmjs.org/alipay_api on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 1.1.0." : alipay_api
+40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1044:10)
+40 verbose stack     at emitOne (events.js:96:13)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:965:12)
+41 verbose statusCode 403
+42 verbose pkgid alipay_api
+43 verbose cwd /Users/joan-feng/Documents/myCode/node-alipay
+44 error Darwin 16.6.0
+45 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+46 error node v6.9.1
+47 error npm  v3.10.8
+48 error code E403
+49 error "You cannot publish over the previously published version 1.1.0." : alipay_api
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
