@@ -69,7 +69,7 @@
 			 const verifyReturn = require('alipay_api').verifyReturn;
 		参数: 
 			let obj = {};
-			obj.response = {
+			obj.response = { <======同步异步返回值: (必填)
 				gmt_create: '2017-08-03 10:59:13',
 				charset: 'utf-8',
 				seller_email: 'hehdtl1351@sandbox.com',
