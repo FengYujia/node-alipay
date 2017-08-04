@@ -20,7 +20,7 @@
 			 const pay = require('alipay_api').pay;
 		参数:
 			let obj = {
-				env: 'dev', // 沙盒还是正式环境: dev or product (默认:dev)
+				env: 'dev', // 沙盒还是正式环境: dev / product / international(默认:dev)
 				app_id: 'xxxxxxxxxxxxxxxx', // app_id : (必填)
 				method: 'alipay.trade.page.pay', // 接口名称: 支持网页支付和手机网页支付及交易辅助接口(必填)
 				charset: 'utf-8', // (默认:utf-8)

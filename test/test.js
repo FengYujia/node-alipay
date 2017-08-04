@@ -6,24 +6,24 @@ const verifyResponse = require('../index.js').verifyResponse;
 const verifyReturn = require('../index.js').verifyReturn;
 
 //1、 =================API调起测试
-// let obj = { // <=====测试只选部分必填参数
-// 	env: 'dev', // 沙盒还是正式环境
-// 	app_id: '2016073100132509', // app_id : 必填
-// 	method: 'alipay.trade.page.pay', // 方法: 必填
-// 	charset: 'utf-8', // 默认:utf-8
-// 	sign_type: 'RSA2', // 默认:RSA2
-// 	version: '1.0',
-// 	biz_content: { // 请求参数: 必填
-// 		out_trade_no: 'ALIPAYTEST2016081622560194853',
-// 		subject: 'test',
-// 		total_amount: '0.01',
-// 		product_code: 'aaaaaa'
-// 	}
-// };
-// obj.privateKey = fs.readFileSync('./key/app_private_key.pem').toString(); // 私钥: 必填
-// alipay(obj, (result) => {
-// 	console.log('>>>>>', result);
-// });
+let obj = { // <=====测试只选部分必填参数
+	env: 'dev', // 沙盒还是正式环境
+	app_id: '2016073100132509', // app_id : 必填
+	method: 'alipay.trade.page.pay', // 方法: 必填
+	charset: 'utf-8', // 默认:utf-8
+	sign_type: 'RSA2', // 默认:RSA2
+	version: '1.0',
+	biz_content: { // 请求参数: 必填
+		out_trade_no: 'ALIPAYTEST2016081622560194853',
+		subject: 'test',
+		total_amount: '0.01',
+		product_code: 'aaaaaa'
+	}
+};
+obj.privateKey = fs.readFileSync('./key/app_private_key.pem').toString(); // 私钥: 必填
+alipay(obj, (result) => {
+	console.log('>>>>>', result);
+});
 
 //2、 =================前台回跳验证
 // let obj = {
@@ -82,22 +82,22 @@ const verifyReturn = require('../index.js').verifyReturn;
 // });
 
 //4、 =================同步验证测试
-let obj = {};
-obj.response = {
-	total_amount: '0.01',
-	timestamp: '2017-08-03 14:11:02',
-	sign: 'DcvpRS3jtPFK64y/qi5LCTUraV803FSLQb6w90MK8JEEgbiTuVd4RPX5cByoYvlHAduNjCAGTLs+vxlzRb4Bzlmc5jAAqgyarQvbZRHvU66Tv4FFh/jHmJhYQKIVeBq/OkB4H07oeYL7nr+IZ9JFYJmXECsT2KO4qcku//YtM2rvcYqqsxdtSpvIh1qtRfMk64cmYkAMH5d0BrQiMejq7NV9GA0Li8Ox2KrJilNnWmnaTokGZdyI3PTayP09U7pJ5AllYIsizZwJn7cPlzSkdTotMi9k2OlovJ5hglNT768goe53TcF1xo1AeTR5PYd1Z3/Ba8DiD+tC9pmTQLX6bQ==',
-	trade_no: '2017080321001004210200153076',
-	sign_type: 'RSA2',
-	auth_app_id: '2016073100132509',
-	charset: 'utf-8',
-	seller_id: '2088102169284526',
-	method: 'alipay.trade.wap.pay.return',
-	app_id: '2016073100132509',
-	out_trade_no: '20150320010101008',
-	version: '1.0'
-};
-obj.publicKey = fs.readFileSync('./key/alipay_pub.pem').toString();
-verifyReturn(obj, (result) => {
-	console.log(result);
-});
+// let obj = {};
+// obj.response = {
+// 	total_amount: '0.01',
+// 	timestamp: '2017-08-03 14:11:02',
+// 	sign: 'DcvpRS3jtPFK64y/qi5LCTUraV803FSLQb6w90MK8JEEgbiTuVd4RPX5cByoYvlHAduNjCAGTLs+vxlzRb4Bzlmc5jAAqgyarQvbZRHvU66Tv4FFh/jHmJhYQKIVeBq/OkB4H07oeYL7nr+IZ9JFYJmXECsT2KO4qcku//YtM2rvcYqqsxdtSpvIh1qtRfMk64cmYkAMH5d0BrQiMejq7NV9GA0Li8Ox2KrJilNnWmnaTokGZdyI3PTayP09U7pJ5AllYIsizZwJn7cPlzSkdTotMi9k2OlovJ5hglNT768goe53TcF1xo1AeTR5PYd1Z3/Ba8DiD+tC9pmTQLX6bQ==',
+// 	trade_no: '2017080321001004210200153076',
+// 	sign_type: 'RSA2',
+// 	auth_app_id: '2016073100132509',
+// 	charset: 'utf-8',
+// 	seller_id: '2088102169284526',
+// 	method: 'alipay.trade.wap.pay.return',
+// 	app_id: '2016073100132509',
+// 	out_trade_no: '20150320010101008',
+// 	version: '1.0'
+// };
+// obj.publicKey = fs.readFileSync('./key/alipay_pub.pem').toString();
+// verifyReturn(obj, (result) => {
+// 	console.log(result);
+// });
