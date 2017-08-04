@@ -5,26 +5,36 @@ const alipay = require('../index.js').pay;
 const verifyResponse = require('../index.js').verifyResponse;
 const verifyReturn = require('../index.js').verifyReturn;
 
-//1、 =================API调起测试
+//1_0、 =================API调起测试 (大陆)
+// let obj = { // <=====测试只选部分必填参数
+// 	env: 'dev', // 沙盒还是正式环境
+// 	app_id: '2016073100132509', // app_id : 必填
+// 	method: 'alipay.trade.wap.pay', // 方法: 必填
+// 	charset: 'utf-8', // 默认:utf-8
+// 	sign_type: 'RSA2', // 默认:RSA2
+// 	timestamp: '2017-01-15 12:12:12', // 默认当前时间
+// 	version: '1.0',
+// 	return_url: 'http://211.95.27.34:3006/seasonPass/test',
+// 	biz_content: { // 请求参数: 必填
+// 		out_trade_no: parseInt(Math.random() * 10000000000000000),
+// 		product_code: 'FACE_TO_FACE_PAYMENT',
+// 		subject: 'test',
+// 		total_amount: '0.01'
+// 	}
+// };
+// obj.privateKey = fs.readFileSync('./key/app_private_key.pem').toString(); // 私钥: 必填
+// alipay(obj, (result) => {
+// 	console.log('>>>>>', result);
+// });
+
+//1_1、 =================API调起测试 (国际)
 let obj = { // <=====测试只选部分必填参数
-	env: 'dev', // 沙盒还是正式环境
-	app_id: '2016073100132509', // app_id : 必填
-	method: 'alipay.trade.page.pay', // 方法: 必填
-	charset: 'utf-8', // 默认:utf-8
-	sign_type: 'RSA2', // 默认:RSA2
-	version: '1.0',
-	biz_content: { // 请求参数: 必填
-		out_trade_no: 'ALIPAYTEST2016081622560194853',
-		subject: 'test',
-		total_amount: '0.01',
-		product_code: 'aaaaaa'
-	}
+	env: 'international', // 沙盒还是正式环境
 };
 obj.privateKey = fs.readFileSync('./key/app_private_key.pem').toString(); // 私钥: 必填
 alipay(obj, (result) => {
 	console.log('>>>>>', result);
 });
-
 //2、 =================前台回跳验证
 // let obj = {
 // 	publicKey: fs.readFileSync('./key/alipay_pub.pem').toString(), // 阿里的公钥: 必填
