@@ -11,7 +11,7 @@ const config = {
 	api_list: { // 必填参数(只测试必填,不测试多填参数,可能造成验签不通过,使用者注意)
 		//公共参数
 		'publicParam': ['app_id', 'method', 'biz_content', 'privateKey'],
-		'international_PublicParam': ['service', 'partner', '_input_charset', 'sign_type', 'sign'],
+		'international_PublicParam': ['service', 'partner', '_input_charset', 'sign_type'],
 
 		//各种API
 		'alipay.trade.precreate': ['out_trade_no', 'total_amount', 'subject'],
